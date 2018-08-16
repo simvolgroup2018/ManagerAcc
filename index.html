@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/jquery-ui.min.css">
+    <link rel="stylesheet" href="style/font-awesome/css/font-awesome.min.css">
+  </head>
+
+  <body>
+
+    <ul id="buttonOpenProjects" class="menuOpen">
+      <li class="btnMenu" onclick="openProjects();" title="Открыть проекты"><i class="fa fa-bars" aria-hidden="true"></i></li>
+      <li class="btnMenu" onclick="openDialogSetting();" title="Настройки"><i class="fa fa-cog" aria-hidden="true"></i></li>
+      <li class="btnMenu" onclick="openDialogNewProject();" title="Создать проект"><i class="fa fa-plus-square-o" aria-hidden="true"></i></li>
+      <li class="btnMenu btnBottom"><input id="autoRefresh" type="checkbox" class="autoRef" title="Автообновление"/></li>
+    </ul>
+
+    <div id="containerProjects" class="containerCloseProjects">
+      <div id="mainProjects" class="containerCloseProjects"></div>
+
+      <div id="load" class="containerOpenProjects">
+        <i class="fa fa-refresh fa-spin fa-3x fa-fw"></i>
+        <span class="sr-only">Загрузка...</span>
+      </div>
+    </div>
+
+<!-- контейнер основного окна с участками -->
+    <div id="container"></div>
+
+<!--========================================== Форма добавления новой задачи -->
+    <div id="AddTask">
+      <div class="ui-widget">
+        <label for="projectTask" class="labelInp">Проект</label>
+        <input id="projectTask" type="text" class="text ui-widget-content ui-corner-all inp" onblur="checkValue(this);">
+      </div>
+
+      <div class="ui-widget">
+        <label for="productTask" class="labelInp">Изделие</label>
+        <select id="productTask" class="text ui-widget-content ui-corner-all inp">
+
+        </select>
+      </div>
+
+      <div class="ui-widget">
+        <label for="srokNewTask" class="labelInp">Срок</label>
+        <input type="text" name="srokNewTask" id="srokNewTask" class="text ui-widget-content ui-corner-all inp" onblur="checkValue(this);">
+      </div>
+    </div>
+<!--========================================== Форма добавления новой задачи -->
+
+    <div class="clearboth"></div>
+
+<!--======================================== Форма добавления нового проекта -->
+    <div id="addProject">
+      <div class="ui-widget">
+        <label for="projectTask" class="labelInp">Клиент</label>
+        <input id="clientNewProject" type="text" class="text ui-widget-content ui-corner-all inp" onblur="checkValue(this);">
+      </div>
+
+      <div class="ui-widget">
+        <label for="projectTask" class="labelInp">Вид работ</label>
+        <input id="jobNewProject" class="text ui-widget-content ui-corner-all inp" onblur="checkValue(this);">
+      </div>
+
+      <div class="ui-widget">
+        <label for="srokNewProject" class="labelInp">Срок проекта</label>
+        <input type="text" name="srokNewProject" id="srokNewProject" class="text ui-widget-content ui-corner-all inp" onblur="checkValue(this);">
+        <div class="clearboth"></div>
+      </div>
+
+      <fieldset>
+        <legend>Участки</legend>
+        <div id="locationsNewProject">
+          <div class="clearboth"></div>
+        </div>
+      </fieldset>
+    </div>
+<!--======================================== Форма добавления нового проекта -->
+
+
+<!--============================= Форма завершения задачи и добавление новых -->
+  <div id="continueProject">
+    <div class="ui-widget">
+      <label for="projectTask" class="labelInp">Проект</label>
+      <input id="nameProject" readonly type="text" class="text ui-widget-content ui-corner-all inp" onblur="checkValue(this);">
+    </div>
+
+    <fieldset>
+      <legend>Участки</legend>
+      <div id="locationsContinue">
+        <div class="clearboth"></div>
+      </div>
+    </fieldset>
+  </div>
+<!--============================= Форма завершения задачи и добавление новых -->
+
+
+<!--==================================================== Форма настроек окна -->
+  <div id="setting">
+    <div class="ui-widget">
+      <label for="heightLocation" class="labelInp">Высота :</label>
+      <input id="heightLocation" type="text" class="text ui-widget-content ui-corner-all inp" >
+    </div>
+
+    <div class="ui-widget">
+      <label for="nameLocations" class="labelInp">Не показывать :</label>
+      <textarea id="nameLocations" type="text" class="text ui-widget-content ui-corner-all inp" ></textarea>
+    </div>
+
+  </div>
+<!--==================================================== Форма настроек окна -->
+
+    <script type="text/javascript" src="app/jquery.min.js"></script>
+    <script type="text/javascript" src="app/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="app/lodash.js"></script>
+    <script type="text/javascript" src="app/lib_ui.js"></script>
+    <script type="text/javascript" src="app/class_location.js"></script>
+    <script type="text/javascript" src="app/create_project.js"></script>
+    <script type="text/javascript" src="app/cuntinue_project.js"></script>
+    <script type="text/javascript" src="app/projects.js"></script>
+    <script type="text/javascript" src="app/create_task.js"></script>
+    <script type="text/javascript" src="app/setting.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
+  </body>
+</html>
